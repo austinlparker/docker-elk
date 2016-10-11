@@ -1,0 +1,11 @@
+filebeat:
+    prospectors:
+        -
+            paths:
+            - /thlogs/*/log/*_output.json
+            input_type: log
+    output:
+        elasticsearch:
+            hosts: ["localhost:9200"]
+            template:
+                path: "filebeat.template.json"

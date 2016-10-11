@@ -14,11 +14,19 @@ logstash:
     - "5000:5000"
   links:
     - elasticsearch
+
 kibana:
   build: kibana/
   volumes:
     - ./kibana/config/:/opt/kibana/config/
   ports:
     - "5601:5601"
+  links:
+    - elasticsearch
+
+filebeat:
+  build: filebeat/
+  volumes:
+    - /thlogs:/thlogs
   links:
     - elasticsearch
