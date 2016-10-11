@@ -6,6 +6,6 @@ filebeat:
             input_type: log
     output:
         elasticsearch:
-            hosts: ["localhost:9200"]
+            hosts: ["elasticsearch:9200"]
             template:
                 path: "filebeat.template.json"
