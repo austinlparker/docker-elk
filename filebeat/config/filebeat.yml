@@ -5,7 +5,5 @@ filebeat:
             - /thlogs/*/log/*_output.json
             input_type: log
 output:
-    elasticsearch:
-        hosts: ["elasticsearch:9200"]
-        template:
-            path: "filebeat.template.json"
+    logstash:
+        hosts: ["logstash:5001"]
