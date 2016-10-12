@@ -27,6 +27,10 @@ kibana:
 filebeat:
   build: filebeat/
   volumes:
+    # Config
+    - ./filebeat/config/:/etc/filebeat
+    # Logs
     - /thlogs:/thlogs
   links:
-    - elasticsearch
+    - logstash
+

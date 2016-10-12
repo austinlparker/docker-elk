@@ -4,6 +4,9 @@ filebeat:
             paths:
             - /thlogs/*/log/*_output.json
             input_type: log
+            fields:
+                source: "test_harness" 
+            fields_under_root: true
 output:
     logstash:
         hosts: ["logstash:5001"]
